@@ -1,0 +1,154 @@
+.home_wrapper {
+  background: url("../../public/assets/images/bg.png");
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sidebar_section {
+  background: linear-gradient(6.92deg, #04060e 0%, #0a193e 100%);
+  box-shadow: 1px 0px 29px 5px rgba(0, 0, 0, 0.25);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.input_section {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  overflow-y: scroll;
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 110%;
+    text-align: center;
+    color: #ffffff;
+    span {
+      background: linear-gradient(90deg, #4ac7fa 0%, #e649f5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+  p {
+    margin: 0;
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #ffffff;
+    width: 75%;
+  }
+}
+.menu_icon {
+  display: none;
+}
+
+.mobile_sidebar {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .home_wrapper {
+    // background: url("../../public/assets/images/bg.png");
+    // width: 100%;
+    // min-height: 100vh;
+    // height: fit-content;
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .sidebar_section {
+    // background: linear-gradient(6.92deg, #04060e 0%, #0a193e 100%);
+    // box-shadow: 1px 0px 29px 5px rgba(0, 0, 0, 0.25);
+    // height: 100vh;
+    // overflow: hidden;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    display: none;
+  }
+
+  .input_section {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: 100vh;
+    overflow-y: scroll;
+    .menubar {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+    }
+    h1 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 110%;
+      text-align: center;
+      color: #ffffff;
+      span {
+        background: linear-gradient(90deg, #4ac7fa 0%, #e649f5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    p {
+      margin: 0;
+      font-family: "Cabin";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      text-align: center;
+      color: #ffffff;
+      width: 75%;
+    }
+  }
+
+  .menu_icon {
+    display: flex;
+    color: #fff;
+    font-size: 30px;
+  }
+  .close_icon_section{
+    position: absolute;
+    right: 18.5%;
+    top: 4.8%;
+  }
+  .mobile_sidebar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(6.92deg, #04060e 0%, #0a193e 100%);
+    box-shadow: 1px 0px 29px 5px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    overflow: hidden;
+    padding: 10px;
+    z-index: 10;
+  }
+  .dim{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}

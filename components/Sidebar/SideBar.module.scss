@@ -1,0 +1,107 @@
+.sidebar_wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .top {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      background: none;
+      color: #e5f6ff;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      border: 1px solid #e5f6ff;
+      border-radius: 10px;
+      padding: 5px 15px;
+      span {
+        margin-left: 40px;
+      }
+    }
+  }
+  .middle {
+    flex: 4;
+    h2 {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 110%;
+      color: #e5f6ff;
+    }
+  }
+  .bottom {
+    flex: 1;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .user {
+      display: flex;
+      height: fit-content;
+      align-items: center;
+      justify-content: space-around;
+      h3 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 110%;
+        color: #e5f6ff;
+        margin: 0;
+      }
+      .user_image {
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .login {
+      display: flex;
+      height: fit-content;
+      align-items: center;
+      justify-content: space-around;
+      cursor: pointer;
+      .login_icon {
+        color: #e5f6ff;
+      }
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 110%;
+        color: #e5f6ff;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+    }
+    .settings {
+      display: flex;
+      height: fit-content;
+      align-items: center;
+      margin-left: 20px;
+      cursor: pointer;
+      .settings_icon {
+        color: #e5f6ff;
+      }
+      p {
+        margin: 0;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 110%;
+        color: #e5f6ff;
+        margin-left: 10px;
+      }
+    }
+  }
+  hr {
+    color: #e5f6ff;
+    margin: 0;
+  }
+}

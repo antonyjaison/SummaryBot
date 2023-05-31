@@ -1,0 +1,45 @@
+.summary_section {
+  //   justify-self: start;
+  width: 75%;
+  h2 {
+    color: #fff;
+    text-align: start;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 110%;
+  }
+  .summary_content {
+    background: rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      text-align: start;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      width: 100%;
+    }
+    .copy_icon_section{
+        background-color: rgba(rgb(86, 86, 86), 0.5);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.5px solid #383838;
+        cursor: pointer;
+        .copy_icon{
+            color: #ffffffbf;
+            font-size: 15px;
+        }
+    }
+  }
+}

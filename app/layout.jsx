@@ -1,15 +1,21 @@
-import global from "@styles/global.scss";
+'use client'
+import "@styles/global.css";
+import "bootstrap/dist/css/bootstrap.css";
+import { SessionProvider } from "next-auth/react";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "SummaryBot",
-  description: "Transforming Websites into Bite-Sized Insights",
+  description: "A bot that summarizes articles.",
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <div className="app">{children}</div>
+        <Provider>
+          <main>{children}</main>
+        </Provider>
       </body>
     </html>
   );

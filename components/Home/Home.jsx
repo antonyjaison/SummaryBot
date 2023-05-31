@@ -13,6 +13,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const Home = () => {
   const [animate, setAnimate] = useState(false);
+  const [summary, setSummary] = useState(false)
 
   const sidebarAnimation = useSpring({
     transform: animate ? "translateX(-5%)" : "translateX(-110%)",
@@ -29,26 +30,26 @@ const Home = () => {
         <div className={`col-lg-2 ${home.sidebar_section}`}>{sidebar}</div>
         <div className={`col-lg-10 ${home.input_section}`}>
           <div className={home.menubar}>
-            {animate ? (
-              <></>
-            ) : (
-              <div onClick={() => setAnimate((prev) => !prev)}>
-                <MenuIcon className={home.menu_icon} />
-              </div>
-            )}
+            <div onClick={() => setAnimate((prev) => !prev)}>
+              <MenuIcon className={home.menu_icon} />
+            </div>
             <div></div>
           </div>
-          <h1>
-            Summarize Articles with <br />
-            <span>OpenAI GPT-4</span>
-          </h1>
-          <p>
-            Transforming Websites into Bite-Sized Insights. Dive into the
-            Essence of Any Webpage with Effortless Efficiency. Simplify
-            Research, Stay Informed, and Save Time.
-          </p>
-          <InputBox />
-          <Summary />
+
+          <div className={home.input_body}>
+            <h1>
+              Summarize Articles with <br />
+              <span>OpenAI GPT-4</span>
+            </h1>
+            <p>
+              Transforming Websites into Bite-Sized Insights. Dive into the
+              Essence of Any Webpage with Effortless Efficiency. Simplify
+              Research, Stay Informed, and Save Time.
+            </p>
+            <InputBox setSummary={setSummary}/>
+          </div>
+
+          {summary ? <Summary /> : <div/>}
         </div>
       </div>
 
@@ -58,7 +59,7 @@ const Home = () => {
       {animate && (
         <animated.div style={bgDim} className={home.dim}>
           <animated.div
-          style={bgDim}
+            style={bgDim}
             className={home.close_icon_section}
             onClick={() => setAnimate((prev) => !prev)}
           >

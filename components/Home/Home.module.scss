@@ -23,7 +23,13 @@
   gap: 30px;
   height: 100vh;
   overflow-y: scroll;
-
+  justify-content: space-between;
+  .input_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
   h1 {
     font-style: normal;
     font-weight: 700;
@@ -89,6 +95,9 @@
     gap: 30px;
     height: 100vh;
     overflow-y: scroll;
+    .input_body {
+      gap: 20px;
+    }
     .menubar {
       width: 70%;
       display: flex;
@@ -126,7 +135,7 @@
     color: #fff;
     font-size: 30px;
   }
-  .close_icon_section{
+  .close_icon_section {
     position: absolute;
     right: 18.5%;
     top: 4.8%;
@@ -142,7 +151,73 @@
     padding: 10px;
     z-index: 10;
   }
-  .dim{
+  .dim {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}
+
+@media (max-width: 430px) {
+  .sidebar_section {
+    // background: linear-gradient(6.92deg, #04060e 0%, #0a193e 100%);
+    // box-shadow: 1px 0px 29px 5px rgba(0, 0, 0, 0.25);
+    // height: 100vh;
+    // overflow: hidden;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    display: none;
+  }
+
+  .input_section {
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    overflow-y: scroll;
+    .menubar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  .menu_icon {
+    display: flex;
+    color: #fff;
+    font-size: 30px;
+  }
+  .close_icon_section {
+    position: absolute;
+    right: 18.5%;
+    top: 4.8%;
+  }
+  .mobile_sidebar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(6.92deg, #04060e 0%, #0a193e 100%);
+    box-shadow: 1px 0px 29px 5px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 10px;
+    z-index: 10;
+  }
+  .dim {
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);

@@ -42,6 +42,16 @@
       }
     }
   }
+  .loading{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .loading_spinner{
+      text-align: center;
+    }
+  }
 }
 
 @media (max-width: 430px) {

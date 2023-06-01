@@ -14,7 +14,6 @@ import LogoutIcon from "@mui/icons-material/Logout";
 const SideBar = () => {
   const [providers, setProviders] = useState(null);
   const { data: session } = useSession();
-  console.log(session);
 
   useEffect(() => {
     const setUpProviders = async () => {

@@ -6,14 +6,18 @@ import Summary from "@components/Summary/Summary";
 import SideBar from "@components/Sidebar/SideBar";
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
+import { useSession } from "next-auth/react";
 
 // icons
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import Image from "next/image";
 
 const Home = () => {
   const [animate, setAnimate] = useState(false);
-  const [summary, setSummary] = useState(false)
+  const [summary, setSummary] = useState("");
+  const [loadingSummary, setLoadingSummary] = useState(false);
+  const { data: session } = useSession();
 
   const sidebarAnimation = useSpring({
     transform: animate ? "translateX(-5%)" : "translateX(-110%)",
@@ -33,7 +37,20 @@ const Home = () => {
             <div onClick={() => setAnimate((prev) => !prev)}>
               <MenuIcon className={home.menu_icon} />
             </div>
-            <div></div>
+            <div>
+              {session?.user && (
+                <Image
+                  alt="user"
+                  src={session?.user.image}
+                  width={30}
+                  height={30}
+                  style={{
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                  }}
+                />
+              )}
+            </div>
           </div>
 
           <div className={home.input_body}>
@@ -46,10 +63,17 @@ const Home = () => {
               Essence of Any Webpage with Effortless Efficiency. Simplify
               Research, Stay Informed, and Save Time.
             </p>
-            <InputBox setSummary={setSummary}/>
-          </div>
+            <InputBox
+              setLoadingSummary={setLoadingSummary}
+              setSummary={setSummary}
+              loadingSummary={loadingSummary}
+            />
 
-          {summary ? <Summary /> : <div/>}
+            <Summary loadingSummary={loadingSummary} summary={summary} />
+          </div>
+          {/* {summary ? <Summary loadingSummary={loadingSummary} summary={summary} /> : <div />}
+          {loadingSummary && <ClipLoader/>} */}
+          <div></div>
         </div>
       </div>
 

@@ -1,22 +1,54 @@
 "use client";
 
-import summary from "./Summary.module.scss";
+import summary_styles from "./Summary.module.scss";
 
 // icon
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
-const Summary = () => {
-  const content =
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis architecto nemo ullam obcaecati ad fugiat perspiciatis praesentium molestias nam dignissimos neque porro id, dolor suscipit autem optio facilis cupiditate voluptatem ab sit consectetur totam facere non placeat. Vitae saepe fugiat explicabo optio esse eos, maxime nobis dicta, a dolor error similique delectus minus possimus aliquid iusto sit. Voluptates incidunt nulla ex rem deleniti aperiam, aut dolorum harum tempore fugiat alias possimus facilis culpa eius odit ducimus, eaque, minus minima obcaecati amet odio adipisci dolores libero ratione? Ad voluptatem neque corrupti aut iste error temporibus qui quo, ducimus perferendis molestias rem doloremque quas cupiditate eos nulla tempore consequuntur pariatur minus dignissimos. Incidunt obcaecati, hic tempora, voluptates modi rerum laboriosam saepe quos magnam dolorem tempore at, nulla repellendus. Id voluptatum quo velit. Hic omnis odio aliquid atque eaque, corrupti in iste, minima magni eligendi accusantium quo! Ut, quaerat ab? Beatae, quae sed?";
+// loader
+import ClipLoader from "react-spinners/ClipLoader";
+import RotateLoader from "react-spinners/RotateLoader";
+import BeatLoader from "react-spinners/BeatLoader";
+
+const Summary = ({ summary, loadingSummary }) => {
+  const handleCopyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(summary);
+    } catch (error) {
+      console.error("Failed to copy text:", error);
+    }
+  };
   return (
-    <section className={summary.summary_section}>
-      <h2>Article Summary</h2>
-      <div className={summary.summary_content}>
-        <p>{content}</p>
-        <div className={summary.copy_icon_section}>
-          <ContentCopyIcon className={summary.copy_icon}/>
-        </div>
-      </div>
+    <section className={summary_styles.summary_section}>
+      {summary ? (
+        <>
+          <h2>Article Summary</h2>
+          <div className={summary_styles.summary_content}>
+            <p>{summary}</p>
+            <div
+              onClick={handleCopyToClipboard}
+              className={summary_styles.copy_icon_section}
+            >
+              <ContentCopyIcon className={summary_styles.copy_icon} />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          {loadingSummary && (
+            <div className={summary_styles.loading}>
+              <p>
+                Bot is making the article summary, <br /> be patient :)
+              </p>
+              <BeatLoader
+                className={summary_styles.loading_spinner}
+                color="#fff"
+                size={10}
+              />
+            </div>
+          )}
+        </>
+      )}
     </section>
   );
 };

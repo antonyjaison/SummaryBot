@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import SendIcon from "@mui/icons-material/Send";
 
-const InputBox = ({ setSummary, setLoadingSummary,loadingSummary }) => {
+const InputBox = ({ setSummary, setLoadingSummary, loadingSummary }) => {
   const { data: session } = useSession();
   const [inputUrl, setInputUrl] = useState("");
   const [error, setError] = useState("");
@@ -17,7 +17,7 @@ const InputBox = ({ setSummary, setLoadingSummary,loadingSummary }) => {
   const submitForm = async (e) => {
     e.preventDefault();
     setLoadingSummary(true);
-    setSummary("")
+    setSummary("");
 
     if (!session?.user) {
       alert("You need to Signup or Login to use this BOT");
@@ -43,6 +43,7 @@ const InputBox = ({ setSummary, setLoadingSummary,loadingSummary }) => {
       },
       body: JSON.stringify({
         url: inputUrl,
+        userId: session?.user.id,
       }),
     });
     const json = await res.json();

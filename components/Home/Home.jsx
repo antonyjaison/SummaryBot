@@ -38,7 +38,7 @@ const Home = () => {
               <MenuIcon className={home.menu_icon} />
             </div>
             <div>
-              {session?.user && (
+              {session?.user ? (
                 <Image
                   alt="user"
                   src={session?.user.image}
@@ -49,7 +49,9 @@ const Home = () => {
                     objectFit: "cover",
                   }}
                 />
-              )}
+              ):<p style={{
+                cursor:'pointer'
+              }}>Login/Signup</p>}
             </div>
           </div>
 

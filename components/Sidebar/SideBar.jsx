@@ -10,6 +10,7 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PreviousSummaryButton from "@components/PreviousSummaryButton/PreviousSummaryButton";
 
 const SideBar = () => {
   const [providers, setProviders] = useState(null);
@@ -36,6 +37,12 @@ const SideBar = () => {
       <hr />
       <div className={sidebar.middle}>
         <h2>Previous Summeries</h2>
+        <PreviousSummaryButton/>
+        <PreviousSummaryButton/>
+        <PreviousSummaryButton/>
+        <PreviousSummaryButton/>
+        <PreviousSummaryButton/>
+
       </div>
       <hr />
       <div className={sidebar.bottom}>

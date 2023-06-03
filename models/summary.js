@@ -1,7 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 const SummarySchema = new Schema({
-  content: {
+  summary: {
     type: String,
     required: true,
   },
@@ -10,6 +10,10 @@ const SummarySchema = new Schema({
     required:true,
     ref: "User",
   },
+  url:{
+    type:String,
+    required:true,
+  }
 });
 
 const Summary = models.Summary || model("Summary", SummarySchema);

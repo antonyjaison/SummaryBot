@@ -24,6 +24,18 @@ const SideBar = () => {
     setUpProviders();
   }, []);
 
+  // useEffect(() => {
+  //   const getPreviousSummaries = async () => {
+  //     const res = await fetch(`/api/summary/?id=${session?.user.id}`, {
+  //       method: "GET",
+  //     });
+  //     const json = await res.json();
+  //     console.log(json);
+  //   };
+  //   getPreviousSummaries();
+  //   console.log(session);
+  // }, [session]);
+
   return (
     <section className={sidebar.sidebar_wrapper}>
       <div className={sidebar.top}>
@@ -37,12 +49,11 @@ const SideBar = () => {
       <hr />
       <div className={sidebar.middle}>
         <h2>Previous Summeries</h2>
-        <PreviousSummaryButton/>
-        <PreviousSummaryButton/>
-        <PreviousSummaryButton/>
-        <PreviousSummaryButton/>
-        <PreviousSummaryButton/>
-
+        <PreviousSummaryButton />
+        <PreviousSummaryButton />
+        <PreviousSummaryButton />
+        <PreviousSummaryButton />
+        <PreviousSummaryButton />
       </div>
       <hr />
       <div className={sidebar.bottom}>

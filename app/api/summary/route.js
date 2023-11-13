@@ -56,3 +56,20 @@ export async function POST(request) {
     });
   }
 }
+
+// export async function GET(request) {
+//   const { searchParams } = new URL(request.url);
+//   const id = searchParams.get("id");
+//   try {
+//     const summaries = await Summary.find({ userId: id }).populate();
+//     return NextResponse.json({
+//       status: true,
+//       summaries,
+//     });
+//   } catch (error) {
+//     return NextResponse.json({
+//       status: true,
+//       error,
+//     });
+//   }
+// }
